@@ -71,9 +71,7 @@ Route::get('/camera', function () {
 Route::post('/foto/','uploadPicture@postImages');
 
 Route::get('/base64/{oi}','uploadPicture@convertTObase64');
-Route::get('/meusalunos', function () {
-    return view('meusalunos');
-});
+Route::get('/meuAluno/{id}', 'RelatorioAlunoController@getRelatorioAluno');
 
 Route::get('alunos/{id}', 'AlunosController@getAlunos');
 

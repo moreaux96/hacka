@@ -46,7 +46,7 @@
                         @foreach($alunos as $aluno)
                             <tr>
                                 <td ><a style="font-family: roboto;"
-                                        href="/meusalunos/{{$aluno['id']}}">{{$aluno['nome']}}</a></td>
+                                        href="/meuAluno/{{$aluno['id']}}">{{$aluno['nome']}}</a></td>
                             </tr>
                         @endforeach
                         </tbody>
