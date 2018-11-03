@@ -27,18 +27,11 @@
 <h1 style="font-family: roboto; margin-left: 200px; margin-top: 75px;">Classes</h1>
 <div class="container">
     <div class="row">
-        <div class="text-center col">
-            <a class="btn btn-primary btn-lg" style="font-family: roboto;" href="/primeiro" role="button">1° ano A</a>
-        </div>
-        <div class="text-center col">
-            <button type="button" style="font-family: roboto;" name="primeiro_b" class="btn btn-primary btn-lg" >1°ano B</button>
-        </div>
-        <div class="text-center col">
-            <button type="button" style="font-family: roboto;" name="segundo_a" class="btn btn-primary btn-lg" >2°ano A</button>
-        </div>
-        <div class="text-center col">
-            <button type="button"  style="font-family: roboto;"name="segundo_b" class="btn btn-primary btn-lg" >2°ano B</button>
-        </div>
+        @foreach($classes as $classe)
+            <div class="text-center col">
+                <a class="btn btn-primary btn-lg"  name="classe" style="font-family: roboto;" href="/sala/{{ $classe['id'] }}" role="button">{{ $classe['descricao'] }}</a>
+            </div>
+        @endforeach
     </div>
     <br>
     <br>
