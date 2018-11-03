@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Model\ClasseModel;
+use App\Model\PersonaModel;
 use Illuminate\Http\Request;
 
 class AvaliacaoController extends Controller
@@ -18,6 +19,11 @@ class AvaliacaoController extends Controller
     }
 
     public function postAvalicao(Request $request) {
-        dd($request->all());
+        $persona = new PersonaModel();
+        $persona->codigo_pessoa = $request->aluno;
+        $persona->avalicao_escrita = $request->comentario;
+        $persona->sentimento = $request->sentimento;
+        $persona->save();
+        return redirect('/obrigado');
     }
 }

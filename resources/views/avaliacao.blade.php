@@ -8,8 +8,56 @@
          <h2 style="font-family: roboto;"> Avaliação</h2>
       </div>
    </div>
-      <form class="row" action="/avaliar" method="post">
+      <form  action="/avaliar" method="post">
          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+         <label for="sentimentos">Sentimentos</label>
+         <div class="row text-center text-nowrap">
+            <div class=" text-center text-nowrap">
+               <label>
+                  <input type="checkbox" name="sentimento" class="btn-radio" value="triste"/>
+                  <img src="{!! asset('img/triste.png') !!}" name="triste" style="max-width: 100px; max-height: 50px;"
+                       class="text-center img-radio" alt="triste">
+                  <input type="submit">
+               </label>
+            </div>
+
+            <div class=" text-center text-nowrap">
+               <label>
+                  <input type="checkbox" name="sentimento" class="btn-radio" value="apaixonado"/>
+                  <img src="{!! asset('img/apaixonado.png') !!}" name="apaixonado"
+                       style="max-width: 100px; max-height: 50px;" class="text-center img-radio" alt="apaixonado">
+                  <input type="submit">
+               </label>
+            </div>
+
+            <div class=" text-center text-nowrap">
+               <label>
+                  <input type="checkbox" name="sentimento" class="btn-radio" value="sorriso"/>
+                  <img src="{!! asset('img/sorriso.png') !!}" name="sorriso"
+                       style="max-width: 100px; max-height: 50px;" class="text-center img-radio" alt="sorriso">
+                  <input type="submit">
+               </label>
+            </div>
+
+            <div class=" text-center text-nowrap">
+               <label>
+                  <input type="checkbox" name="sentimento" class="btn-radio" value="prantos"/>
+                  <img src="{!! asset('img/em prantos.png') !!}" name="em prantos"
+                       style="max-width: 100px; max-height: 50px;" class="text-center img-radio" alt="em prantos">
+                  <input type="submit">
+               </label>
+            </div>
+
+            <div class=" text-center text-nowrap">
+               <label>
+                  <input type="checkbox" name="sentimento" class="btn-radio" value="bravo"/>
+                  <img src="{!! asset('img/bravo.png') !!}" name="bravo" style="max-width: 100px; max-height: 50px;"
+                       class="text-center img-radio" alt="bravo">
+                  <input type="submit">
+               </label>
+            </div>
+         </div>
+      <div class="row">
          <div class="col-md-4">
             <div class="form-group">
                <label for="sala">Escolha a sala</label>
@@ -32,12 +80,12 @@
             <div class="form-group">
                <label style="font-family: roboto;">Realize o comentario</label>
                <textarea
-                 class="form-control"
-                 style="height: 150px;"
-                 name="comentario"
-                 id="comentario"
-                 placeholder="Escreva os seus comentários..."
-                 required>
+                       class="form-control"
+                       style="height: 150px;"
+                       name="comentario"
+                       id="comentario"
+                       placeholder="Escreva os seus comentários..."
+                       required>
                </textarea>
             </div>
          </div>
@@ -56,6 +104,7 @@
                </button>
             </div>
          </div>
+      </div>
       </form>
    <script>
        $( document ).ready(function() {
