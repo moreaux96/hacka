@@ -37,7 +37,7 @@
 <div class="login-area">
     <div class="container">
         <div class="login-box ptb--100">
-            <form  method="POST" action="\login\professor\">
+            <form  method="POST" action="\login\professor">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="login-form-head">
                     <h4>Educa4Feel</h4>
@@ -58,6 +58,12 @@
                         <i class="ti-lock"></i>
                     </div>
                     <div class="row mb-4 rmber-area">
+                        <div class="col-6">
+                            <div class="custom-control custom-checkbox mr-sm-2">
+                                <input type="checkbox" class="custom-control-input" id="customControlAutosizing"  name="remember">
+                                <label class="custom-control-label" for="customControlAutosizing">Lembre Me</label>
+                            </div>
+                        </div>
                         <div class="col-6 text-right">
                             <a href="#">Esqueceu a senha?</a>
                         </div>
