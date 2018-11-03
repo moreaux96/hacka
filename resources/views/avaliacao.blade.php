@@ -1,8 +1,8 @@
-@include('layout')
-<div class="container">
+@extends('layout')
+@section('pagina')
    <div class="row">
       <div class="col-md-12 text-left">
-         <h1 style="font-family: roboto;"> Bem vindo {nomeProf} </h1>
+         <h1 style="font-family: roboto;"> Bem vindo Professor</h1>
       </div>
       <div class="col-md-8 text-center">
          <h2 style="font-family: roboto;"> Avaliação</h2>
@@ -106,6 +106,9 @@
          </div>
       </div>
       </form>
+</div>
+@endsection
+@section('scripts')
    <script>
        $( document ).ready(function() {
            $("#sala").on('change', function () {
@@ -123,4 +126,4 @@
            });
        });
    </script>
-</div>
+@endsection

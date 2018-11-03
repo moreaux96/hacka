@@ -1,34 +1,9 @@
-<!DOCTYPE html>
-<html lang="BR">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <style>
-body
-        {
-            background: url('img/fundo.jpg') no-repeat center center fixed;
-            background-size: cover;
-        }
-    </style>
-    <meta http-equiv="X-UA-Compatible" content="IE=7">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href=" {{asset('css/perguntas.css')}}">
-    <script src="{{asset('js/perguntas.js')}}"></script>
-
-    <title>Perguntas</title>
-
-
-</head>
-<body>
-    <div class="text-center">
+@extends('layout')
+@section('pagina')
+    <div class="text-center" style="margin: 150px">
         <h1 style="font-family: roboto;">Avaliação recebida, obrigado.</h1>
         <div>
             <a class="btn btn-primary" href="/minha_area" role="button" style="font-family: roboto;">Voltar para minha aréa</a>
         </div>
     </div>
-
-</body>
-</html>
+@endsection

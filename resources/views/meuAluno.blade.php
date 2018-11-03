@@ -1,24 +1,5 @@
-<!doctype html>
-<html>
-
-<head>
-    <style>
-        body
-        {
-            background: url('img/fundo.jpg') no-repeat center center fixed;
-            background-size: cover;
-        }
-    </style>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <meta charset="utf-8">
-    <title>Bem vindo Aluno 1</title>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-</head>
-<body>
+@extends('layout')
+@section('pagina')
 <h1 style="font-family: roboto" class="text-center" style="font-family: roboto;">Bem vindo ao relatório de {{$aluno->nome}}!</h1>
 <div class="container">
     <div class="row">
@@ -59,7 +40,8 @@
 </button>
 </div>
 </div>
-</body>
+@endsection
+@section('scripts')
 <script type="text/javascript">
 google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(criaGrafico);
@@ -84,4 +66,4 @@ var chart = new google.visualization.PieChart(document.getElementById('grafico')
 chart.draw(data, options);
 }
 </script>
-</html>
+@endsection
