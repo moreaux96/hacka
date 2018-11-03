@@ -47,7 +47,7 @@ Route::get('/login', function () {
 
 Route::post('/login/professor', 'loginController@postLogin');
 
-    Route::get('/perguntas_aluno', function () {
+Route::get('/perguntas_aluno', function () {
     return view('perguntas_aluno');
 });
 Route::get('/salas', "SalasController@getSalas");
