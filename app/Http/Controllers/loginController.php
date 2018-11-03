@@ -13,14 +13,14 @@ class loginController extends Controller
 {
     public function postLogin(Request $request)
     {
-        
+
         if ($request->senha == '' && $request->email == '') {
             \Session::flash("message", 'Dados incorretos, por favor tentar novamente');
             $request->flash();
             return back();
         }
 
-        return view('/minha_area');
+        return redirect('/minha_area');
     }
 
     public function postImagem(Request $request)
