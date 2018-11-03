@@ -45,7 +45,7 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::post('/login/professor', 'loginController@postLogin');
+Route::post('/login/professor', 'loginController@postLogin')->name('/login/professor');
 
 Route::get('/perguntas_aluno', function () {
     return view('perguntas_aluno');
