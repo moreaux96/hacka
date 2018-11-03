@@ -10,7 +10,7 @@ class SalasController extends Controller
     //
     public function getSalas(){
         $classes = ClasseModel::where('id','<>','')->get();
-
+        dd($classes);
         foreach ($classes as $classe) {
             $classeArray[] = ['id' => $classe->id, 'descricao' => $classe->descricao];
         }
