@@ -37,7 +37,7 @@
 <div class="login-area">
     <div class="container">
         <div class="login-box ptb--100">
-            <form  method="POST" action="\login\professor\">
+            <form  method="POST" action="\login\professor">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="login-form-head">
                     <h4>Educa4Feel</h4>
