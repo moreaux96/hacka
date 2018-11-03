@@ -1,62 +1,96 @@
 <!doctype html>
-<html>
+<html class="no-js" lang="{{ app()->getLocale() }}">
 
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=7">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <title>Teste</title>
-    <style>
-         body
-         {
-         background: url('img/fundo.jpg') no-repeat center center fixed;
-         background-size: cover;
-         }
-      </style>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Login - srtdash</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="assets/images/icon/favicon.ico">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/metisMenu.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/slicknav.min.css">
+    <!-- amchart css -->
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <!-- others css -->
+    <link rel="stylesheet" href="assets/css/typography.css">
+    <link rel="stylesheet" href="assets/css/default-css.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- modernizr css -->
+    <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
+
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-        <!-- <div class="card card-signin my-5"> -->
-          <!-- <div class="card-body"> -->
-            <br/>
-            <br/>
-            <br/>
-            
-            <h1 class="text-center" style="font-family: roboto;">Educa4Feel</h1>
-              @if (Session::has('message'))
-                  <div style="text-align: center; margin:auto;"
-                       class="alert alert-danger">{{ Session::get('message') }}</div>
-              @endif
-              <form class="form-signin" action="\login\professor" method="post">
-                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
-              <div class="form-label-group">
-                <input type="email" name ='email' id="inputEmail" class="form-control" placeholder="Usuario" required autofocus>
-                <label for="inputEmail" style="font-family: roboto;">Usuario</label>
-              </div>
-              <div class="form-label-group">
-                <input type="password" name = 'senha' id="inputPassword" class="form-control" placeholder="Senha" required>
-                <label for="inputPassword" style="font-family: roboto;">Senha</label>
-              </div>
-
-              <div class="custom-control custom-checkbox mb-3">
-                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                <label class="custom-control-label" for="customCheck1" style="font-family: roboto;">Esqueci a senha</label>
-              </div>
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Entrar</button>
-
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<!-- preloader area start -->
+<div id="preloader">
+    <div class="loader"></div>
+</div>
+<!-- preloader area end -->
+<!-- login area start -->
+<div class="login-area">
+    <div class="container">
+        <div class="login-box ptb--100">
+            <form  method="POST" action="\login\professor">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <div class="login-form-head">
+                    <h4>Educa4Feel</h4>
+                    @if (Session::has('message'))
+                        <div style="text-align: center; margin:auto;"
+                             class="alert alert-danger">{{ Session::get('message') }}</div>
+                    @endif
+                </div>
+                <div class="login-form-body">
+                    <div class="form-gp">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email">
+                        <i class="ti-email"></i>
+                    </div>
+                    <div class="form-gp">
+                        <label for="password">Senha</label>
+                        <input type="password" id="password"  name="senha">
+                        <i class="ti-lock"></i>
+                    </div>
+                    <div class="row mb-4 rmber-area">
+                        <div class="col-6">
+                            <div class="custom-control custom-checkbox mr-sm-2">
+                                <input type="checkbox" class="custom-control-input" id="customControlAutosizing"  name="remember">
+                                <label class="custom-control-label" for="customControlAutosizing">Lembre Me</label>
+                            </div>
+                        </div>
+                        <div class="col-6 text-right">
+                            <a href="#">Esqueceu a senha?</a>
+                        </div>
+                    </div>
+                    <div class="submit-btn-area">
+                        <button id="form_submit" type="submit">Submit <i class="ti-arrow-right"></i></button>
+                    </div>
+                </div>
             </form>
-          <!-- </div> -->
-        <!-- </div> -->
-      </div>
+        </div>
     </div>
-  </div>
-  <footer></footer>
+</div>
+<!-- login area end -->
+
+<!-- jquery latest version -->
+<script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
+<!-- bootstrap 4 js -->
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/metisMenu.min.js"></script>
+<script src="assets/js/jquery.slimscroll.min.js"></script>
+<script src="assets/js/jquery.slicknav.min.js"></script>
+
+<!-- others plugins -->
+<script src="assets/js/plugins.js"></script>
+<script src="assets/js/scripts.js"></script>
 </body>
 
 </html>
