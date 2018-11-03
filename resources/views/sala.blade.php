@@ -39,23 +39,16 @@
                     <table class="table">
                         <thead class="black white-text">
                         <tr>
-                            <th scope="col">#</th>
                             <th scope="col" style="font-family: roboto;">Alunos</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td ><a style="font-family: roboto;" href="/meusalunos">Marco</a></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td><a style="font-family: roboto;" href="#">Larry</a></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td><a style="font-family: roboto;" href="#">Fenando</a></td>
-                        </tr>
+                        @foreach($alunos as $aluno)
+                            <tr>
+                                <td ><a style="font-family: roboto;"
+                                        href="/meuAluno/{{$aluno['id']}}">{{$aluno['nome']}}</a></td>
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>

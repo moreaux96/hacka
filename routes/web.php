@@ -16,9 +16,7 @@ Route::get('/', function () {
 });
 
 // ==========================  ALUNOS =============================================
-Route::get('/primeiro', function () {
-    return view('primeiro');
-});
+Route::get('/sala/{id}', 'SalaController@getSala');
 
 Route::post('/respostas', 'loginController@respostaAluno');
 //=====================================================================================
@@ -52,9 +50,7 @@ Route::post('/login/professor', 'loginController@postLogin');
     Route::get('/perguntas_aluno', function () {
     return view('perguntas_aluno');
 });
-Route::get('/salas', function () {
-    return view('salas');
-});
+Route::get('/salas', "SalasController@getSalas");
 
 Route::get('/obrigado', function () {
     return view('obrigado');
@@ -75,9 +71,7 @@ Route::get('/camera', function () {
 Route::post('/foto/','uploadPicture@postImages');
 
 Route::get('/base64/{oi}','uploadPicture@convertTObase64');
-Route::get('/meusalunos', function () {
-    return view('meusalunos');
-});
+Route::get('/meuAluno/{id}', 'RelatorioAlunoController@getRelatorioAluno');
 
 Route::get('alunos/{id}', 'AlunosController@getAlunos');
 
