@@ -38,7 +38,7 @@
                     id.push($(".check:checked").val());
                 });
                 bater_foto();
-                //location.reload();
+                location.reload();
                 // window.releaseEvents.href = "http://localhost:8000/perguntas_aluno#";
                 event.preventDefault();
             });
@@ -152,7 +152,6 @@
                         <input  type="submit">
                     </label>
                 </div>
-
             </div>
         </form>
 
