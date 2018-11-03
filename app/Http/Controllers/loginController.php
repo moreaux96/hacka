@@ -13,7 +13,7 @@ class loginController extends Controller
 {
     public function postLogin(Request $request)
     {
-        if ($request->senha <> '1234' && $request->email <> 'lucas@lucas.com.br') {
+        if ($request->senha == '' && $request->email == '') {
             \Session::flash("message", 'Dados incorretos, por favor tentar novamente');
             $request->flash();
             return back();
@@ -26,9 +26,39 @@ class loginController extends Controller
     {
         //$this->getClienteId();
         $url = $this->uploadImagem($request->imagem64);
-        $this->postAnaliseImagem($url);
+        $post = $this->postAnaliseImagem($url);
+        if($this->saveDados($post)){
+            return true;
+        }else{
+            return false;
+        }
+
     }
 
+    public function saveDados($dados){
+        if(!empty($dados)){
+            $pessoa = Model\AlunoClasse::where('codigo_persona','<>','')->get();
+            foreach($pessoa as $persona){
+                foreach ($dados[0]['faceAttributes']['emotion'] as $dado => $value) {
+                    $avalicao = new Model\EmocaoModel();
+                    $avalicao->codigo_pessoa = $persona->codigo_persona;
+                    $avalicao->emocao_id = $this->getIDEmocao($dado);
+                    $avalicao->emocao_valor = $value;
+                    $avalicao->save();
+                }
+            }
+        }
+    }
+
+
+    public function getIDEmocao($nomeEmocao){
+
+        $emocao = Model\TabelaEmocaoModel::where('emocao','=',$nomeEmocao)->first();
+        if($emocao){
+            return $emocao->id;
+        }
+        return 1;
+    }
 
     public function uploadImagem($imagem){
         $img = str_replace('data:image/jpeg;base64,', '', $imagem);
@@ -89,8 +119,41 @@ class loginController extends Controller
             $response = $request->send();
 
             $dados = json_decode($response->getBody(), JSON_PRETTY_PRINT);
-            dd($dados);
-            RETURN $dados[0];
+            RETURN $dados;
+        } catch (HttpException $ex) {
+            return $ex;
+        }
+    }
+
+    public function verificaID($Id){
+        $ocpApimSubscriptionKey = '6d1cc517fbbb4eee8d2d7acde708fe23';
+        $uriBase = 'https://westcentralus.api.cognitive.microsoft.com/face/v1.0/findsimilars';
+
+        $request = new Http_Request2($uriBase . '/detect');
+        $url = $request->getUrl();
+
+        $headers = array(
+            'Content-Type' => 'application/json',
+            'Ocp-Apim-Subscription-Key' => $ocpApimSubscriptionKey
+        );
+
+        $request->setHeader($headers);
+        $parameters = array(
+            // Request parameters
+            'returnFaceId' => 'true',
+            'returnFaceLandmarks' => 'false',
+            'returnFaceAttributes' => 'emotion');
+        $url->setQueryVariables($parameters);
+
+        $request->setMethod(HTTP_Request2::METHOD_POST);
+        $body = json_encode(array('url' => $Id));
+        $request->setBody($body);
+
+        try {
+            $response = $request->send();
+
+            $dados = json_decode($response->getBody(), JSON_PRETTY_PRINT);
+            RETURN $dados;
         } catch (HttpException $ex) {
             return $ex;
         }
