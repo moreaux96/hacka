@@ -34,6 +34,15 @@ Route::post('/avaliar', 'AvaliacaoController@postAvalicao');
 
 //======================================================================================
 
+// ==================================IMAGEM E PERGUNTAS ==================================
+Route::get('/perguntas_aluno', function () {
+    return view('perguntas_aluno');
+});
+
+Route::post('/uploadimagem','loginController@postImagem');
+
+//======================================================================================
+
 Route::get('/login', function () {
     return view('login');
 });
