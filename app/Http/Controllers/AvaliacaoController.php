@@ -20,9 +20,9 @@ class AvaliacaoController extends Controller
 
     public function postAvalicao(Request $request) {
         $persona = new PersonaModel();
-        $persona->codigo_pessoa = $request->aluno;
+        $persona->codigo_pessoa = !empty($request->aluno) ? $request->aluno : '';
         $persona->avalicao_escrita = $request->comentario;
-        $persona->sentimento = $request->sentimento;
+        $persona->sentimento = !empty($request->sentimento) ? $request->sentimento : 'sorriso';
         $persona->save();
         return redirect('/obrigado');
     }
