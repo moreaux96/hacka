@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "uplifted-earth-221408",
+  "private_key_id": "5f1105413e0f4e5c3d7cb16f3e4cb57eef597431",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDXJsj0Pez/9Bne\njg/d4QQKAk5kPfS4BXe1u9BfQVt9Y8nGpElLo3enVhovIx9BdcdiGnm2j90xCcwC\nwm1QU61i+8QRl5hv4w4fNqkAUCBiorXTsCYzHpwCvtWV2fmc8ApANPb+aQt0PNa+\nbjehlZ5akKvurGVSwLpApfr9vInPY4DVLmcCzpNtlJjumXWQYAbKZv4e7L9ECKeu\nr+7e+QsVn0cj2Cl1rpWik8NNVgGX+jNGlOYNSfhNaUIBuJp9gqgFkXLphhDsf6FP\n4C4ijrHaFjvng+TfRKUvfstkNc0bzva18t0pxz9LX+ApUPNQxFDb3CVMT7HSuVbr\nlSRN4nwXAgMBAAECggEAXq42Q+mWiOK6maqJx/o0ZVUze0Cal3rsfeDLZ4fjA7Cs\nxIpaqPskdlLZTgIWSJ/UoNMG2fTAgcqOaW53XaCdTlB+LcG5Nw/EEK9kuvsH7XAu\nNRyxCtD/FeQ2KO5WPx6RXEUSps3CWSJG3GGzgJvPpopA51Udd8fRjw6cABp+yPDx\nNuycgFSnvK+djnQ+a93nhRdCSIPSlSkIpfzyufXxnp1GwDBFDRQ4X/HZQcimuKYn\nM4aW7xmJBxp55uFY5wnGctqsBaRAFsc7LCsnvwTUBjFEF4HF1Yt1luwIXf3Hxj5z\n7s5oWWgh1+VjPGvAgZfQuIRR42OspwuAVRU8yvtU3QKBgQD98aisJ+/V9qSMj2Rt\n6/beBHjYzldV/r4JsSH2oargdEA+guhHffgQTSmTtSDjQQkSXSZIolTTc0x1Icvz\nlPSPjNd4lND1cBvR6hs7iRDJG/ww/YC2IbdI1d4Qi+E3iUwVINgDY1VyUPemz++p\nu1d3wxg21/aCbiHg4zCLBsVFQwKBgQDY5Ljk6E680Eev98fxwafYb/JL7d0eTz/w\nxqu/hSG3mtx+eN5nJWkmaY7MnxeK0wtHn+yKWFyemXzfwGydvpqEq12Ekt3TaeXB\nuW0yPerwCxInRrgEwbQoh9wKGQrj1drCrm5Bpyjo7N5ZndgHHBKu4vA/bXo8bjCr\nPv//xGvWnQKBgG92iRC3nuANmIBR2EUfU4Zz9A9F0rPeUs+yPjQhFf3bSO+nSglH\nU4DkPaGl2T+mpjK3TDyJdC4z55VqNjk+YnI34cP9nhJ9GNj0putk6Ec9z145hytq\ndSa1KPmeTEayLwD/H5GtIi5BN9KyZoHbxzK8IX7BIGRzrs8lKYN8f049AoGAdhNe\nTM/jPYst27BK22QP2hZnk8p0nDGMn6moimURzAC0lO18Ni75pX3FzcO2b08hTubT\nQSWFlpn8j1sURnQjbqJUEP5bYOK/v80Qk099/Rwpz9QCDiTdzUrZEW48rXgY1e9b\n+sXj0ZpSGfuCRayUxzyoif8xkoByYmezuivWgUkCgYEAjGaNUpIg5A9GkJO3PW93\nraH36egpjCkxcV5Y+F3kL/rkxh+PsaVHTEDG7HM85HqkIOfAO/wkdierkXWqpMdi\nh84rm1O3ZVQASo8nFA686NYg3u5Z34RASgEs1VmuX6I346hzK3pBMvirsL4F8qZW\nWTUJJc18I4gH+ScOqOp8/+k=\n-----END PRIVATE KEY-----\n",
+  "client_email": "uplifted-earth-221408@appspot.gserviceaccount.com",
+  "client_id": "110068769532224174963",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/uplifted-earth-221408%40appspot.gserviceaccount.com"
+}
