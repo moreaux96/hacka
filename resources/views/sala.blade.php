@@ -3,32 +3,30 @@
 <div class="container text-center">
     <h1 style="font-family: roboto">Métricas da sala</h1>
     <div class="row">
+        <div class="text-center">
+            <button type="button" class="btn btn-primary">
+                <a href="/salas" style="color: floralwhite">Voltar</a>
+            </button>
+        </div>
         <div class="text-center col-lg-6" id="grafico"></div>
-        <div class="table-responsive col-lg-6">
+        <div class="table-responsive col-lg-12">
             <div class="well hidden well-sm clearfix" data-target="tabela1">
-
-                <div class="panel panel-primary">
-                    </table>
-                    <table class="table">
-                        <thead class="black white-text">
-                        <tr>
-                            <th scope="col" style="font-family: roboto;">Alunos</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        @foreach($alunos as $aluno)
-                            <tr>
-                                <td ><a style="font-family: roboto;"
-                                        href="/meuAluno/{{$aluno['id']}}">{{$aluno['nome']}}</a></td>
-                            </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
-                </div>
-                <div class="text-center">
-                    <button type="button" class="btn btn-primary">
-                        <a href="/salas" style="color: floralwhite">Voltar</a>
+                <form  action="/meuAluno" method="post" id="formAluno">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <div class="panel panel-primary">
+                        <div class="form-group">
+                            <label for="alunos">Escolha o Aluno</label>
+                            <select id="alunos" class="form-control" name="alunos">
+                                @foreach($alunos as $aluno)
+                                    <option value="{{ $aluno['id'] }}">{{$aluno['nome']}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit"
+                            class="btn btn-primary w-25">Pesquisar
                     </button>
+                </form>
                 </div>
             </div>
         </div>
@@ -59,5 +57,12 @@
         var chart = new google.visualization.PieChart(document.getElementById('grafico'));
         chart.draw(data, options);
     }
+    $( "#formAluno" ).submit(function( ) {
+        var id = $("#alunos option:selected").val();
+        if(id != 0) {
+            return true
+        }
+        return false;
+    });
 </script>
 @endsection

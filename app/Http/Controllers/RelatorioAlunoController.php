@@ -9,8 +9,9 @@ use Illuminate\Http\Request;
 class RelatorioAlunoController extends Controller
 {
     //
-    public function getRelatorioAluno($id)
+    public function postRelatorioAluno(Request $request)
     {
+        $id = $request->alunos;
         $aluno = AlunoClasse::where('codigo_persona', $id)->first();
         $avaliacao = PersonaModel::where('codigo_pessoa', $aluno->codigo_persona)->first();
         if(!empty($avaliacao)) {
