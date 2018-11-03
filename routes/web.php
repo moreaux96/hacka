@@ -28,7 +28,9 @@ Route::get('/minha_area', function () {
     return view('minha_area');
 });
 
-Route::get('/avaliar', 'loginController@getAvalicao');
+Route::get('/avaliar', 'AvaliacaoController@getAvalicao');
+Route::post('/avaliar', 'AvaliacaoController@postAvalicao');
+
 
 //======================================================================================
 
@@ -67,3 +69,6 @@ Route::get('/base64/{oi}','uploadPicture@convertTObase64');
 Route::get('/meusalunos', function () {
     return view('meusalunos');
 });
+
+Route::get('alunos/{id}', 'AlunosController@getAlunos');
+

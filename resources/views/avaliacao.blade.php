@@ -8,28 +8,24 @@
          <h2 style="font-family: roboto;"> Avaliação</h2>
       </div>
    </div>
-      <form class="row" action="\obrigadoProf" method="post">
+      <form class="row" action="/avaliar" method="post">
          <input type="hidden" name="_token" value="{{ csrf_token() }}">
          <div class="col-md-4">
             <div class="form-group">
-               <label style="font-family: roboto;">Escolha a sala</label>
-               <input type="text"
-                      class="form-control"
-                      name="sala"
-                      id="sala"
-                      placeholder="SALA"
-                      required>
+               <label for="sala">Escolha a sala</label>
+               <select id="sala" class="form-control" name="sala">
+                  @foreach($classes as $classe)
+                     <option value="{{ $classe['id'] }}">{{$classe['descricao']}}</option>
+                  @endforeach
+               </select>
             </div>
          </div>
          <div class="col-md-4" >
             <div class="form-group">
-               <label style="font-family: roboto;">Escolha o Aluno</label>
-               <input type="text"
-                      class="form-control"
-                      name="aluno"
-                      id="aluno"
-                      placeholder="ALUNO"
-                      required>
+               <label for="aluno">Escolha a sala</label>
+               <select id="aluno" class="form-control" name="aluno">
+                  <option id="0">Escolha o Aluno</option>
+               </select>
             </div>
          </div>
          <div class="col-lg-8">
@@ -47,7 +43,7 @@
          </div>
          <div class="col-lg-6 text-left">
             <div class="form-group" >
-               <button name="enviar_avaliacao"
+               <button type="submit"
                        id="enviar_avaliacao"
                        class="btn btn-primary w-25">Enviar
                </button>
@@ -61,4 +57,21 @@
             </div>
          </div>
       </form>
+   <script>
+       $( document ).ready(function() {
+           $("#sala").on('change', function () {
+               var id = $(this).val();
+               $("#aluno").empty();
+               if(id != 0) {
+                   $.get( "alunos/"+id, function( data ) {
+                       $("#aluno").empty();
+                       data.forEach(function (result) {
+                           $("#aluno").append('<option value='+result.id+'>'+result.nome + '</option>')
+                           console.log();
+                       });
+                   });
+               }
+           });
+       });
+   </script>
 </div>

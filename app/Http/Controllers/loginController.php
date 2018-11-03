@@ -26,9 +26,4 @@ class loginController extends Controller
         return view('/obrigado');
     }
 
-    public function getAvalicao(){
-       $classe = Model\ClasseModel::where('id','<>','')->get();
-       dd($classe);
-    }
-
 }
